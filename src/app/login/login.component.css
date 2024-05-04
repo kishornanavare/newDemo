@@ -1,0 +1,9 @@
+form{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    height: 90vh;
+    width: 100%;
+    background-image: url('../../assets/real-estate-bangalore-1.avif');
+}

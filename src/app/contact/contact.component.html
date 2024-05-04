@@ -1,0 +1,20 @@
+<div class="table">
+    <table class="table text-center">
+        <tr class="table table-info">
+            <th *ngFor="let y of takeAllData">{{y}}</th>
+            <th colspan="2">Action</th>
+        </tr>
+        <tr class="table table-danger" *ngFor="let x of reciveData">
+            <td>{{x.projectName}}</td>
+            <td>{{x.clientName}}</td>
+            <td>{{x.location}}</td>
+            <td>{{x.startDate}}</td>
+            <td>{{x.endDate}}</td>
+            <td>{{x.projectDescription}}</td>
+            <td>{{x.projectManager}}</td>
+            <td>{{x.budget}}</td>
+            <td><button class="btn btn-warning" (click)="onUpdate(x)">Update</button></td>
+            <td><button class="btn btn-danger" (click)="onDelete(x)">Delete</button></td>
+        </tr>
+    </table>
+</div>

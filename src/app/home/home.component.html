@@ -1,0 +1,56 @@
+<div class="container">
+    <form class="form-control" [formGroup]="formData" (ngSubmit)="OnSubmit()">
+        <input type="hidden" formControlName="id">
+        <div>
+            <label class="form-lable" for="title">Title :</label>
+            <input class="form-control" type="text" formControlName="title">
+        </div>
+        <div>
+            <label class="form-lable" for="price">Price :</label>
+            <input class="form-control" type="text" formControlName="price">
+        </div>
+        <div>
+            <label class="form-lable" for="description">Description :</label>
+            <input class="form-control" type="text" formControlName="description">
+        </div>
+        <div>
+            <label class="form-lable" for="category">Category :</label>
+            <input class="form-control" type="text" formControlName="category">
+        </div>
+        <div>
+            <label class="form-lable" for="image">Image :</label>
+            <input class="form-control" type="text" onFocus="[type='file']" formControlName="image">
+        </div>
+
+        <div>
+            <input class="btn btn-outline-info me-3" type="submit" value="Submit">
+            <input class="btn btn-outline-warning " type="button" (click)="UpdateData()" value="Update Data">
+        </div>
+        
+    </form>
+</div>
+
+<div class="container table text-center">
+    <table class="table-info w-100">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Image</th>
+            <!-- <th>Rating</th> -->
+            <th colspan="2">Action</th>
+        </tr>
+        <tr class="table-primary" *ngFor="let x of liveData">
+            <td>{{x.id}}</td>
+            <td>{{x.title}}</td>
+            <td>{{x.price}}</td>
+            <td>{{x.description}}</td>
+            <td>{{x.category}}</td>
+            <td><img [src]="x.image" alt="fakeAPI image" width="100px" height="80px"></td>
+            <td><button class="btn btn-warning" (click)="onUpdate(x)">Update</button></td>
+            <td><button class="btn btn-danger" (click)="onDelete(x)"> Delete</button></td>
+        </tr>
+    </table>
+</div>

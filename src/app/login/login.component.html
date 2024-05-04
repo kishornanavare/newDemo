@@ -1,0 +1,30 @@
+
+<div class="container">
+    <form [formGroup]="myForm">
+        <div class="row w-50">
+            <div >
+                <label class="form-label">User Name</label>
+                <input class="form-control" type="text" formControlName="username" placeholder="Enter your User Name" required
+                [ngClass]="{'is-invalid': flag && myForm.get('username').errors}">
+                <div *ngIf="flag" class="invalid-feedback">Please enter user name</div>
+            </div>
+            <div >
+                <label class="form-label">Email</label>
+                <input class="form-control" type="email" formControlName="email" placeholder="Enter your Email" required
+                [ngClass]="{'is-invalid': flag && (myForm.get('email').invalid && myForm.get('email').touched)}">
+                <div *ngIf="myForm.get('email').errors?.required && myForm.get('email').touched" class="invalid-feedback">Please enter the email</div>
+                <div *ngIf="myForm.get('email').errors?.pattern && myForm.get('email').touched" class="invalid-feedback">Please enter a valid email</div>
+            </div>
+            <div >
+                <label class="form-label">Password</label>
+                <input class="form-control" type="password" formControlName="password" placeholder="Enter your Password" required
+                [ngClass]="{'is-invalid' : flag && myForm.get('password').errors}">
+                <div *ngIf="flag" class="invalid-feedback">Enter a password</div>
+            </div>
+            <div>
+                <input class="btn btn-info mt-2" type="button"(click)="OnlogIn()" value="Login">
+                <input class="btn btn-primary mt-2 ms-3" type="button" (click)="OnSignUp()" value="Sign Up">
+            </div>
+        </div>
+    </form>
+</div>

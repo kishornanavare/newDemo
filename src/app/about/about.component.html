@@ -1,0 +1,60 @@
+<!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    
+    <input type="hidden" formControlName="id">
+<div>
+    <label class="form-label">First Name</label>
+    <input type="text" class="form-control" formControlName="fname">
+</div>
+<div>
+    <label class="form-label">Last Name</label>
+    <input type="text" class="form-control" formControlName="lname">
+</div>
+<div>
+    <label class="form-label">Email</label>
+    <input type="email" class="form-control" formControlName="email">
+</div>
+<div>
+    <input type="submit" class="btn btn-info" value="Submit">
+</div>
+</form> -->
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label for="projectName" class="form-label">Project Name:</label>
+        <input type="text" id="projectName" formControlName="projectName" class="form-control" required>
+        <div class="invalid-feedback">
+            Please provide a project name.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="clientName" class="form-label">Client Name:</label>
+        <input type="text" id="clientName" formControlName="clientName" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" id="location" formControlName="location" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Start Date:</label>
+        <input type="date" id="startDate" formControlName="startDate" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="endDate" class="form-label">End Date:</label>
+        <input type="date" id="endDate" formControlName="endDate" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="projectDescription" class="form-label">Project Description:</label>
+        <textarea id="projectDescription" formControlName="projectDescription" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="projectManager" class="form-label">Project Manager:</label>
+        <input type="text" id="projectManager" formControlName="projectManager" class="form-control">
+    </div>
+    
+    <div class="mb-3">
+        <label for="budget" class="form-label">Budget:</label>
+        <input type="number" id="budget" formControlName="budget" class="form-control">
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
